@@ -1,0 +1,160 @@
+.sidebar {
+  width: 245px;
+  height: 100vh;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 25px 16px 18px;
+
+  background: linear-gradient(180deg, #29482e, #19331f);
+  color: white;
+
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 0 8px;
+  margin-bottom: 48px;
+
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 13px;
+
+  border-radius: 10px;
+
+  color: #e1e8dc;
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background: #ffffff18;
+}
+
+.sidebar-link.active {
+  background: #f0f2e7;
+  color: var(--green);
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: auto;
+  padding: 15px 4px 0;
+
+  border-top: 1px solid #ffffff30;
+}
+
+.sidebar-avatar {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #e5e9d9;
+  color: var(--green);
+}
+
+.sidebar-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  min-width: 0;
+  flex: 1;
+}
+
+.sidebar-user-info strong {
+  font-size: 11px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar-user-info span {
+  color: #cbd6c7;
+  font-size: 9px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar-logout {
+  border: none;
+  background: transparent;
+  color: #dce6d8;
+  padding: 7px;
+}
+
+.sidebar-logout:hover {
+  color: white;
+}
+
+/* Tablet and mobile */
+@media (max-width: 750px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    min-height: auto;
+
+    position: relative;
+
+    padding: 15px;
+
+    overflow: visible;
+  }
+
+  .sidebar-brand {
+    margin-bottom: 17px;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .sidebar-link {
+    padding: 9px;
+    font-size: 11px;
+  }
+
+  .sidebar-user {
+    display: none;
+  }
+}

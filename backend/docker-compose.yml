@@ -1,0 +1,21 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: researchmind_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: researchmind
+      POSTGRES_PASSWORD: researchmind_dev_password
+      POSTGRES_DB: researchmind
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U researchmind -d researchmind"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  pgdata:

@@ -1,0 +1,139 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #17291c;
+  background: #f7f5ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+
+  --green: #203d27;
+  --green-dark: #19321f;
+  --green-light: #e7eddf;
+  --cream: #f7f5ef;
+  --white: #fffefa;
+  --brown: #79502d;
+  --text: #17291c;
+  --muted: #77766e;
+  --border: #e7e2d8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1180px, 92%);
+  margin: auto;
+}
+
+.primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 23px;
+  border: none;
+  border-radius: 30px;
+  background: var(--green);
+  color: white;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.primary-btn:hover {
+  background: #315638;
+  transform: translateY(-2px);
+}
+
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border: 1px solid var(--brown);
+  border-radius: 30px;
+  background: transparent;
+  color: var(--brown);
+  font-weight: 600;
+}
+
+.section-label {
+  color: var(--brown);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* =================================
+   GLOBAL APP LAYOUT
+================================= */
+
+.app-layout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Sidebar occupies 245px */
+.app-layout > main {
+  flex: 1;
+  width: calc(100% - 245px);
+  min-width: 0;
+  min-height: 100vh;
+  margin-left: 245px;
+}
+
+/* =================================
+   RESPONSIVE LAYOUT
+================================= */
+
+@media (max-width: 750px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .app-layout > main {
+    width: 100%;
+    margin-left: 0;
+    min-height: auto;
+  }
+
+  .container {
+    width: 90%;
+  }
+}
